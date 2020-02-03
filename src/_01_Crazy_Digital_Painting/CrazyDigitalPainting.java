@@ -3,8 +3,8 @@ import java.awt.Color;
 import java.awt.color.*;
 public class CrazyDigitalPainting {
 	//1. Create two final static integers for the width and height of the display.
-	final static int width = 300;
-	final static int height = 300;
+	final static int width = 1000;
+	final static int height = 1000;
 	
 	//2. Create a 2D array of Color objects. You will need to import
 	//java.awt.Color. Initialize the size of the array using the 
