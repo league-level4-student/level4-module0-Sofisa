@@ -17,7 +17,7 @@ public class Cell implements Drawable{
 		this.cellSize = size;
 	}
 	
-	//11. Complete tue liveOrDie method
+	//11. Complete true liveOrDie method
 	//    It sets isAlive to true or false based on the neighbors and 
 	//the rules of the game
 	/*
