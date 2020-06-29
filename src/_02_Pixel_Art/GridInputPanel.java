@@ -1,19 +1,23 @@
 package _02_Pixel_Art;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class GridInputPanel extends JPanel{
+public class GridInputPanel extends JPanel implements ActionListener{
 	private static final long serialVersionUID = 1L;
 	private JTextField windowWidthField;
 	private JTextField windowHeightField;
 	private JTextField rowsField;
 	private JTextField colsField;
 	private JButton submitButton;
-			
+	JButton load;
+	
 	PixelArtMaker pam;
 	
 	public GridInputPanel(PixelArtMaker pam) {
@@ -24,7 +28,9 @@ public class GridInputPanel extends JPanel{
 		rowsField = new JTextField(5);
 		colsField = new JTextField(5);
 		submitButton = new JButton("Submit");
+		load = new JButton("Load previous");
 		
+	
 		add(new JLabel("screen width:"));
 		add(windowWidthField);
 		add(new JLabel("\tscreen height:"));
@@ -34,7 +40,8 @@ public class GridInputPanel extends JPanel{
 		add(new JLabel("\ttotal columns:"));
 		add(colsField);
 		add(submitButton);
-		
+		add(load);
+		load.addActionListener(this);
 		submitButton.addActionListener((e)->submit());
 	}
 	
@@ -66,6 +73,14 @@ public class GridInputPanel extends JPanel{
 	
 	private void invalidateInput() {
 		JOptionPane.showMessageDialog(null, "Be sure all fields are complete with positive numbers.", "ERROR", 0);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if (e.getSource() == load) {
+			PixelArtMaker.load();
+		}
 	}
 	
 	
